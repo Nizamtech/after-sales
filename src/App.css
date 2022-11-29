@@ -1,0 +1,191 @@
+.App {
+  text-align: center;
+}
+
+.openMenuAnimation {
+  animation: openMenu 0.5s ease-in-out forwards;
+  transform-origin: left top;
+}
+
+@keyframes openMenu {
+  0% {
+    transform: scaleX(0);
+  }
+
+  80% {
+    transform: scaleX(1);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.closeMenuAnimation {
+  animation: closeMenu 0.5s ease-in-out forwards;
+  transform-origin: right top;
+}
+
+@keyframes closeMenu {
+  0% {
+    transform: scaleX(0);
+  }
+
+  80% {
+    transform: scaleX(1);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+/* Sub Menu Accordion Style */
+
+.accordion-button::after {
+  margin-right: 6px !important;
+}
+
+.accordion-button:not(.collapsed) {
+  background: transparent !important;
+}
+
+/* Submit Button Style Here */
+
+.submitButton:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10;
+  height: 550%;
+  width: 140%;
+  background: rgba(0, 0, 0, 0.623);
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
+  transform: translateX(-98%) translateY(-25%) rotate(45deg);
+}
+
+.submitButton:hover:after {
+  -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+  transform: translateX(-9%) translateY(-25%) rotate(45deg);
+}
+
+/* Hide Arrow For Input Type Number */
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* ScrollBar Style */
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+/* Animation For Collapsible Table */
+
+.collapseAnimation {
+  animation: collapse 0.5s ease-in-out forwards;
+  transform-origin: top center;
+}
+
+@keyframes collapse {
+  0% {
+    transform: scaleY(0);
+  }
+
+  80% {
+    transform: scaleY(1);
+  }
+
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+.hideAnimation {
+  animation: hide 0.5s ease-in-out forwards;
+  transform-origin: bottom center;
+}
+
+@keyframes hide {
+  0% {
+    transform: scaleY(0);
+  }
+
+  80% {
+    transform: scaleY(1);
+  }
+
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+/* Mobile menu Style Here */
+
+.mobile-menu-bg {
+  background-image: linear-gradient(
+    103.51deg,
+    #eaf8ff -11.85%,
+    #fdf8f9 47.62%,
+    #eaf9f1 108.74%
+  );
+}
+
+/* Table Stle For Small Screen */
+
+@media screen and (max-width: 600px) {
+  .table-data:first-child {
+    background-color: #0e2558;
+    color: white !important;
+  }
+
+  table {
+    border: none !important;
+    border-radius: 100px;
+  }
+
+  .table-head {
+    border-radius: 100px;
+    border: none;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  .table-row {
+    border-bottom: 1px solid lightgray;
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .table-data {
+    border-bottom: none;
+    display: block;
+    font-size: 15px;
+    text-align: right;
+    height: 45px;
+  }
+
+  .table-data::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: 600;
+  }
+
+  .table-data:last-child {
+    border-bottom: 1px solid lightgray;
+  }
+}
